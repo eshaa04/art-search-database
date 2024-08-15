@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+      <script src="script.js" defer> </script>
+        
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <title>Art Database Search</title>
+       
+        <style>
+            body {
+    font-family: 'Poppins', sans-serif;
+    }
+    .title {
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .collection p {
+        font-weight: bold;
+        padding-top: 110px; 
+        font-size: 17px;
+       
+        
+    }
+
+   
+
+    .medium p{
+      font-weight: bold;
+      font-size: 17px;
+
+
+    }
+
+    .typeof p{
+      font-weight: bold;
+      font-size: 17px;
+
+
+    }
+
+    .number p{
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .subtext p{
+      font-weight: normal;
+      font-size: 11px;
+
+
+    }
+
+    label{
+        font-size: 13px;
+    }
+
+    .header{
+        width: 100%;
+        height: 80px;
+        display: block;
+        padding: 13px;
+        margin-left: -16px;
+        margin-top: -20px;
+        font-size: 15px;
+        z-index: 1500;
+        position: fixed;
+        background-image: linear-gradient(to left, rgb(236, 136, 219) , rgb(128, 195, 223));
+    }
+
+    .filterable_cards{
+      display: flex;
+      margin-top: 25px;
+      gap: 15px;
+      flex-wrap: wrap;
+
+    }
+    .card{
+      flex-basis: 220px;
+      background-color: rgb(232, 206, 228);
+      padding: 3px;
+    }
+
+    .card.hide {
+      display: none;
+
+    }
+
+    .card img{
+      width: 100%;
+      height: 250px;
+      
+      
+
+      
+
+    }
+    .card_body{
+      padding: 10px 15px 15px;
+    } 
+    
+    .card_title{
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .card_text{
+      font-size: 13px;
+
+    }
+  
+
+
+
+
+   
+    
+        </style>
+
+    </head>
+    <body>
+        <!-- <p class="title">ART DATABASE SEARCH</p> -->
+
+        <div class="header">
+            <h1>ART DATABASE SEARCH</h1>
+           
+          </div>
+
+    
+
+          
+
+ <div class="checkboxes">
+  <div class="collection">
+    <p>Collection:</p>
+
+
+    <label>
+        <input type="checkbox" name="myCheckbox6" value="Fine Art" id="myCheckbox6">
+        Fine Art(FA)
+      </label>
+
+      <label>
+        <input type="checkbox" name="myCheckbox7" value="OUR" id="myCheckbox7">
+       Objects of Unknown Relevance(OUR)
+      </label>
+
+  </div>
+
+
+  <div class="typeof">
+    <p>Type of Object:</p>
+    <label>
+        <input type="checkbox" name="myCheckbox" value="painting" id="myCheckbox">
+        Painting
+      </label>
+    
+    <label>
+        <input type="checkbox" name="myCheckbox1" value="multimedia" id="myCheckbox1">
+        Multimedia
+      </label>
+
+      <label>
+        <input type="checkbox" name="myCheckbox3" value="textile" id="myCheckbox3">
+        Textile
+      </label>
+
+      <label>
+        <input type="checkbox" name="myCheckbox4" value="sculpture" id="myCheckbox4">
+        Sculpture
+      </label>
+
+
+      <label>
+        <input type="checkbox" name="myCheckbox5" value="other" id="myCheckbox4">
+        Other
+      </label>
+
+
+
+  </div>
+
+  <div class="medium">
+    <p>Medium:</p>
+
+  <label>
+    <input type="checkbox" name="myCheckbox8" value="acrylic" id="myCheckbox8">
+    Acrylic
+  </label>
+
+  <label>
+    <input type="checkbox" name="myCheckbox9" value="oil" id="myCheckbox9">
+    Oil
+  </label>
+
+  
+  <label>
+    <input type="checkbox" name="myCheckbox10" value="watercolor" id="myCheckbox10">
+    Watercolor
+  </label>
+
+  <label>
+    <input type="checkbox" name="myCheckbox11" value="multimedia" id="myCheckbox11">
+    Multimedia
+  </label>
+
+  
+  <label>
+    <input type="checkbox" name="myCheckbox12" value="playbill" id="myCheckbox12">
+    Playbill
+  </label>
+
+  <label>
+    <input type="checkbox" name="myCheckbox13" value="other" id="myCheckbox13">
+    Other
+  </label>
+
+  </div>
+  
+
+
+
+
+<div class="number">
+
+<p>Accession Number:</p>
+<div class="subtext"> 
+<p>Please uncheck all boxes above before searching.</p>
+
+</div>
+<label for="textInput">Enter Accession Number:</label>
+<input type="text" id="textInput" name="name">
+
+
+
+
+</div>
+
+ </div>
+         
+
+
+    <div class="filterable_cards">
+      <div id="card1" class="card"
+      data-typeof="Painting"
+      data-medium="oil"
+      data-collection="Fine Art"
+      data-number="FA.2023.1.1.2"
+      >
+  
+        <img src="images/FA.2023.1.1.2 (1).jpg" alt="">
+        <div class="card_body">
+          <h6 class="card_title">Pride off the Rock Festival</h6>
+          <p class="card_text"> Artist: Tieger<br> Location: West Tower <br> Oil Painting<br>Size: 36x30x2
+
+          </p>
+          
+
+        </div>
+
+
+      </div>
+
+      <div id="card2" class="card"
+      data-typeof="painting"
+      data-medium="watercolor"
+      data-collection="Fine Art"
+      data-number="FA.2023.1.1.10"
+      >
+  
+        <img src="images/FA.2023.1.1.10.jpg" alt="">
+        <div class="card_body">
+          <h6 class="card_title">Gage Park Gazebo in winter</h6>
+          <p class="card_text"> Artist: D Scott Taylor<br> Location: West Tower <br> Watercolor Painting<br>Size: 43x36x2
+
+          </p>
+          
+
+        </div>
+
+
+      </div>
+
+      <div id="card3" class="card"
+      data-typeof="painting"
+      data-medium="oil"
+      data-collection="Fine Art"
+      data-number="FA.2023.1.1.11"
+      >
+  
+        <img src="images/FA.2023.1.1.11.jpg" alt="">
+        <div class="card_body">
+          <h6 class="card_title">Autumn House Painting</h6>
+          <p class="card_text"> Artist: Jin Wei<br> Location: West Tower <br> Oil Painting<br>Size: 23x20x2
+
+          </p>
+          
+
+        </div>
+
+
+      </div>
+
+      <div id="card4" class="card"
+      data-typeof="painting"
+      data-medium="acrylic"
+      data-collection="Fine Art"
+      data-number="FA.2023.1.2.49"
+      >
+  
+        <img src="images/FA.2023.1.2.49.jpg" alt="">
+        <div class="card_body">
+          <h6 class="card_title">Butterfly</h6>
+          <p class="card_text"> Artist: Lynden Cowen<br> Location: City Hall <br> Acrylic Painting<br>Size: 54x43x2
+
+          </p>
+          
+
+        </div>
+
+
+      </div>
+
+    
+
+    <div id="card5" class="card"
+    data-typeof="textile"
+    data-medium="multimedia"
+    data-collection="Fine Art"
+    data-number="FA.2023.8.1.30"
+    >
+
+      <img src="images/FA.2023.8.1.30.jpg" alt="">
+      <div class="card_body">
+        <h6 class="card_title">Moon Woman Shirt</h6>
+        <p class="card_text"> Artist: Unknown<br> Location: City Hall <br> Multimedia Textile<br>Size: 74x49x2
+
+        </p>
+        
+
+      </div>
+
+
+    </div>
+
+    <div id="card6" class="card"
+    data-typeof="multimedia"
+    data-medium="multimedia"
+    data-collection="Fine Art"
+    data-number="FA.2023.10.1.1"
+    >
+
+      <img src="images/FA.2023.10.1.1.jpg" alt="">
+      <div class="card_body">
+        <h6 class="card_title">Purple Ribbon Artwork</h6>
+        <p class="card_text"> Artist: Judy Ruzylo<br> Location: West Tower <br> Multimedia<br>Size: 37x36x2
+
+
+        </p>
+        
+
+      </div>
+
+    </div>
+
+      <div id="card7" class="card"
+      data-typeof="painting"
+      data-medium="acrylic"
+      data-collection="Fine Art"
+      data-number="FA.2023.3.1.53"
+      >
+  
+        <img src="images/FA.2023.3.1.53.jpg" alt="">
+        <div class="card_body">
+          <h6 class="card_title">Early Snow</h6>
+          <p class="card_text"> Artist: Tom Thomson<br> Location: Rose Theater <br> Acrylic Painting<br>Size: 33x31x1
+
+  
+  
+          </p>
+          
+  
+        </div>
+
+
+    </div>
+
+    <div id="card8" class="card"
+    data-typeof="painting"
+    data-medium="oil"
+    data-collection="Fine Art"
+    data-number="FA.2023.1.1.54"
+    >
+
+      <img src="images/FA.2023.1.1.54.jpg" alt="">
+      <div class="card_body">
+        <h6 class="card_title">Centre Main Street in Oil</h6>
+        <p class="card_text"> Artist: Jin Wei<br> Location: City Hall <br> Oil Painting<br>Size: 20x16x2.5
+
+
+
+
+        </p>
+        
+
+      </div>
+
+
+  </div>
+
+  <div id="card9" class="card"
+    data-typeof="painting"
+    data-medium="oil"
+    data-collection="Fine Art"
+    data-number="FA.2023.1.1.55"
+    >
+
+      <img src="images/FA.2023.1.1.55.jpg" alt="">
+      <div class="card_body">
+        <h6 class="card_title">City Hall in Oil</h6>
+        <p class="card_text"> Artist: Jin Wei<br> Location: City Hall <br> Oil Painting<br>Size: 20x16x2.5
+
+
+
+
+
+        </p>
+        
+
+      </div>
+
+
+  </div>
+
+
+  <div id="card10" class="card"
+  data-typeof="painting"
+  data-medium="oil"
+  data-collection="Fine Art"
+  data-number="FA.2023.1.1.56"
+  >
+
+    <img src="images/FA.2023.1.1.56.jpg" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Don's Bakery</h6>
+      <p class="card_text"> Artist: John Cutruzzola
+        <br> Location: West Tower <br> Oil Painting<br>Size: 16x20x1
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+
+<div id="card11" class="card"
+  data-typeof="painting"
+  data-medium="oil"
+  data-collection="Fine Art"
+  data-number="FA.2023.1.1.57"
+  >
+
+    <img src="images/FA.2023.1.1.57.jpg" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Farmer on a Tractor</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: West Tower <br> Oil Painting<br>Size: 45x36x1
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card12" class="card"
+  data-typeof="painting"
+  data-medium="watercolor"
+  data-collection="Fine Art"
+  data-number="FA.2023.1.1.58"
+  >
+
+    <img src="images/FA.2023.1.1.58.jpg" alt="">
+    <div class="card_body">
+      <h6 class="card_title">City Hall with portals</h6>
+      <p class="card_text"> Artist: D.Scott Taylor
+        <br> Location: West Tower <br>Watercolor Painting<br>Size: Unknown
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card12" class="card"
+  data-typeof="painting"
+  data-medium="watercolor"
+  data-collection="Fine Art"
+  data-number="No number"
+  >
+
+    <img src="images/Screenshot (2).png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Remembering Our Roots</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: West Tower <br> Watercolor Painting<br>Size: Unknown
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+
+<!-- OUR SECTION-->
+<div id="card13" class="card"
+  data-typeof="painting"
+  data-medium="oil"
+  data-collection="OUR"
+  data-number="OUR.2023.1.1.26"
+  >
+
+    <img src="images/OUR.2023.1.1.26.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">RBC Olympic Torch Relay 2010</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: City Hall <br> Oil Painting<br>Size: 61x38x3
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card14" class="card"
+  data-typeof="painting"
+  data-medium="oil"
+  data-collection="OUR"
+  data-number="OUR.2023.1.1.27"
+  >
+
+    <img src="images/OUR.2023.1.1.27.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">PanAm 2018 Toronto</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: City Hall <br> Oil Painting<br>Size: 36x24x2
+
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card15" class="card"
+  data-typeof="painting"
+  data-medium="oil"
+  data-collection="OUR"
+  data-number="OUR.2023.1.1.28"
+  >
+
+    <img src="images/OUR.2023.1.1.28.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Equality Mural</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: City Hall <br> Oil Painting<br>Size: 73x112x41
+
+
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card16" class="card"
+  data-typeof="textile"
+  data-medium="other"
+  data-collection="OUR"
+  data-number="OUR.2023.8.1.29
+  "
+  >
+
+    <img src="images/OUR.2023.8.1.29.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Rogers Hometown Hockey Jersey 2018</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: City Hall <br> Mounted Jersey<br>Size: 73x112x41
+
+
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card17" class="card"
+  data-typeof="other"
+  data-medium="other"
+  data-collection="OUR"
+  data-number="OUR.2023.4.2.51"
+  >
+
+    <img src="images/OUR.2023.4.2.51.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Original Tremaine Map</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: City Hall <br> Map <br>Size: 80x64x3
+
+
+
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card18" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.60"
+  >
+
+    <img src="images/OUR.2023.4.1.60.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Murray (first show)</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 24x17.5x0.5
+
+
+
+
+
+
+
+
+
+      </p>
+      
+
+    </div>
+
+
+</div>
+
+<div id="card18" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.61"
+  >
+
+    <img src="images/OUR.2023.4.1.61.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Murray (1918 steam train)</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 24x17.5x0.5
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card19" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.62"
+  >
+
+    <img src="images/OUR.2023.4.1.62.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Boyz II Men (show bill)</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 8x11x1
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card20" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.63"
+  >
+
+    <img src="images/OUR.2023.4.1.63.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Boyz II Men (show poster)</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 8x11x1
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card20" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.64"
+  >
+
+    <img src="images/OUR.2023.4.1.64.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Flowers</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x13.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card21" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.65"
+  >
+
+    <img src="images/OUR.2023.4.1.65.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Tick Tick Boom</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x13.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card21" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.66"
+  >
+
+    <img src="images/OUR.2023.4.1.66.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">A Funny Thing Happened on the Way to the Forum</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x13.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card22" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.67"
+  >
+
+    <img src="images/OUR.2023.4.1.67.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">The Taming of the Dude</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x13.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card23" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.68"
+  >
+
+    <img src="images/OUR.2023.4.1.68.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Moonlight + Magnolias</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x13.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card24" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.69"
+  >
+
+    <img src="images/OUR.2023.4.1.69.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">The Taming of the Shrew</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x13.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card25" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.70"
+  >
+
+    <img src="images/OUR.2023.4.1.70.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Billy Bishop Goes to War</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x13.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card26" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.71"
+  >
+
+    <img src="images/OUR.2023.4.1.71.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Scrooge</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card27" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.72"
+  >
+
+    <img src="images/OUR.2023.4.1.72.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">A Christmas Carol</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+
+<div id="card28" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.73"
+  >
+
+    <img src="images/OUR.2023.4.1.73.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Student Shakespeare Festival</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card29" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.74"
+  >
+
+    <img src="images/OUR.2023.4.1.74.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Summer Theatre Season 2012</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card30" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.75"
+  >
+
+    <img src="images/OUR.2023.4.1.75.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Caberet</h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card30" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.76"
+  >
+
+    <img src="images/OUR.2023.4.1.76.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">The Drawer Boy
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card30" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.77"
+  >
+
+    <img src="images/OUR.2023.4.1.77.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">A Chorus Line
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+<div id="card31" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.78"
+  >
+
+    <img src="images/OUR.2023.4.1.78.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">The 39 Steps
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+
+</div>
+
+
+<div id="card31" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.79"
+  >
+
+    <img src="images/OUR.2023.4.1.79.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Twelfth Night
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card32" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.80"
+  >
+
+    <img src="images/OUR.2023.4.1.80.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">The Odd Couple
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+
+<div id="card33" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.81"
+  >
+
+    <img src="images/OUR.2023.4.1.81.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">The War Show
+
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card33" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.82"
+  >
+
+    <img src="images/OUR.2023.4.1.82.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Broadway Gold II
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card34" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.83"
+  >
+
+    <img src="images/OUR.2023.4.1.83.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">7 Stories
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card35" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.84"
+  >
+
+    <img src="images/OUR.2023.4.1.84.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Romeo & Juliet
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card36" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.85"
+  >
+
+    <img src="images/OUR.2023.4.1.85.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Feb 2010 promotional
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card37" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.86"
+  >
+
+    <img src="images/OUR.2023.4.1.86.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Summer 2009 promo
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card38" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.87"
+  >
+
+    <img src="images/OUR.2023.4.1.87.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Dec 2008 promo
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card39" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.89"
+  >
+
+    <img src="images/OUR.2023.4.1.89 (2).png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Nov 2008 promo
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card40" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.90"
+  >
+
+    <img src="images/OUR.2023.4.1.90.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">April 2008 promo
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card41" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.91"
+  >
+
+    <img src="images/OUR.2023.4.1.91.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Feb 2008 promo
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card41" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.92"
+  >
+
+    <img src="images/OUR.2023.4.1.92.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">R+J: Brampton
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card42" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.93"
+  >
+
+    <img src="images/OUR.2023.4.1.93.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Macbeth
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card43" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.94"
+  >
+
+    <img src="images/OUR.2023.4.1.94.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Flower City Theatre Festival - Heritage Series
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 10.5x14.5x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+<div id="card44" class="card"
+  data-typeof="other"
+  data-medium="playbill"
+  data-collection="OUR"
+  data-number="OUR.2023.4.1.95"
+  >
+
+    <img src="images/OUR.2023.4.1.95.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Elizabeth Rex
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: Rose Theatre <br> Archival Playbill <br>Size: 11x8x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+<div id="card44" class="card"
+  data-typeof="painting"
+  data-medium="acrylic"
+  data-collection="OUR"
+  data-number="OUR.2023.1.1.1"
+  >
+
+    <img src="images/OUR.2023.1.1.1.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">ACISA Cultural Mural
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: City Hall <br> Acrylic Painting <br>Size: 72x144x1
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+<div id="card45" class="card"
+  data-typeof="sculpture"
+  data-medium="multimedia"
+  data-collection="OUR"
+  data-number="OUR.2023.7.1.1"
+  >
+
+    <img src="images/OUR.2023.7.1.1.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Miniature Diorama of Brampton City Hall
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: West Tower <br> Multimedia Sculpture <br>Size: Unknown
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+<div id="card46" class="card"
+  data-typeof="sculpture"
+  data-medium="multimedia"
+  data-collection="OUR"
+  data-number="OUR.2023.7.1.3"
+  >
+
+    <img src="images/OUR.2023.7.1.3.png" alt="">
+    <div class="card_body">
+      <h6 class="card_title">Oko Olaja Olu Ti Warri
+      </h6>
+      <p class="card_text"> Artist: Unknown
+        <br> Location: West Tower <br> Multimedia Sculpture <br>Size: 10x20x6
+
+
+      </p>
+    
+
+    </div>
+
+</div>
+
+    </div>
+    
+    </body>
+
+
+</html>
